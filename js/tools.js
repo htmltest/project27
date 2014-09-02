@@ -328,7 +328,7 @@ var iScrollInstance;
                 $('#wrapper').data('scrollTop', curScrollTop);
             }
             $('header, .promo-top').css({'margin-left': -($(window).width() - $('#wrapper').width()) / 2});
-            $('#promo.fixed h1').css({'margin-left': -223 - ($(window).width() - $('#wrapper').width()) / 2});
+            $('.promo-top-text').css({'margin-left': -223 - ($(window).width() - $('#wrapper').width()) / 2});
 
             var curIndex = $('.gallery-links a').index($(this));
             $('.item-gallery-list ul li a').eq(curIndex).click();
@@ -357,7 +357,7 @@ var iScrollInstance;
                     $(window).scrollTop($('#wrapper').data('scrollTop'));
                 }
                 $('header, .promo-top').css({'margin-left': 0});
-                $('#promo.fixed h1').removeAttr('style');
+                $('.promo-top-text').removeAttr('style');
 
                 $('.item-gallery').removeClass('item-gallery-open');
             }
@@ -508,10 +508,8 @@ var iScrollInstance;
             function updatePromo() {
                 if (-$('.wrapper-inner').offset().top >= 337) {
                     $('body').addClass('promo-fixed');
-                    $('.promo-top-line').css({'margin-top': 0});
                 } else {
                     $('body').removeClass('promo-fixed');
-                    $('.promo-top-line').css({'margin-top': $('.wrapper-inner').offset().top});
                 }
             }
             $('.wrapper-inner').stellar({
@@ -625,7 +623,7 @@ var iScrollInstance;
             $('#wrapper').css({'top': -curScrollTop});
             $('#wrapper').data('scrollTop', curScrollTop);
             $('header, .promo-top').css({'margin-left': -($(window).width() - $('#wrapper').width()) / 2});
-            $('#promo.fixed h1').css({'margin-left': -223 - ($(window).width() - $('#wrapper').width()) / 2});
+            $('.promo-top-text').css({'margin-left': -223 - ($(window).width() - $('#wrapper').width()) / 2});
         }
 
         $('body').append('<div class="window"><div class="window-overlay"></div><div class="window-container"><div class="window-content">' + contentWindow + '<a href="#" class="window-close"></a></div></div></div>')
@@ -674,7 +672,7 @@ var iScrollInstance;
             $('#wrapper').css({'top': 'auto', 'left': 'auto'});
         }
         $('header, .promo-top').css({'margin-left': 0});
-        $('#promo.fixed h1').removeAttr('style');
+        $('.promo-top-text').removeAttr('style');
         if (isMobileWebkit) {
             $('body').css({'width': 'auto', 'height': '100%', 'overflow': 'hidden'});
         } else {
